@@ -54,7 +54,7 @@ if __name__ == '__main__':
 
     # Train the model on the training set
     w_init = np.array([0, 0, 0])
-    lr = 0.00001
+    lr = 0.01
     num_iterations = 10
 
     w_star = gradient_descent(x_train, y_train, w_init, lr, num_iterations)
@@ -72,22 +72,24 @@ if __name__ == '__main__':
     plt.show()
 
 
+#Debugging:
+# you may see that the empirical risk is increasing. What could be the problem?
+    # Learning rate is too large: 
+    #  If the learning rate is too large, the weight updates during each iteration will be too large,
+    #  and the algorithm may overshoot the optimal solution, causing the empirical risk to increase instead of decrease.
+    #  In this case, we may need to reduce the learning rate to allow for smaller weight updates and better convergence.
 
-# Learning rate (lr) is too large: 
-# If the learning rate is too large, the weight updates during each iteration will be too large,
-#  and the algorithm may overshoot the optimal solution, causing the empirical risk to increase instead of decrease.
-#  In this case, you may need to reduce the learning rate to allow for smaller weight updates and better convergence.
-
-# Learning rate (lr) is too small: If the learning rate is too small, the weight updates during each iteration will be too small,
-#  and the algorithm may take a long time to converge, or may get stuck in a local minimum.
-#  In this case, you may need to increase the learning rate to allow for larger weight updates and faster convergence.
+    # Learning rate is too small: 
+    #  If the learning rate is too small, the weight updates during each iteration will be too small,
+    #  and the algorithm may take a long time to converge, or may get stuck in a local minimum.
+    #  In this case, we may need to increase the learning rate to allow for larger weight updates and faster convergence.
 
 
 # when decreasing the learning rate, the empirical risk decreases and the weights are closer to the optimal solution.
 
 # the hypothesis (fitted model) is not close enough to the training data. What actions could you take to improve the fitting?
-# 1. Increase the number of iterations
-# 2. Increase the learning rate
-# 3. Increase the training data by collecting more data
-# 4. Increase the complexity of the model (e.g. add more features)
+    # 1. Increase the number of iterations
+    # 2. Increase the learning rate
+    # 3. Increase the training data by collecting more data
+    # 4. Increase the complexity of the model (e.g. add more features)
 
